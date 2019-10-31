@@ -9,7 +9,13 @@ public interface ToDoService {
 
   public List<ToDoList> findAllList(String username);
 
+  public ToDoList getListById(int listId);
+
   public List<ToDo> findAllToDos(String listName);
+
+  public List<ToDoList> createList(ToDoList newList);
+
+  public ToDoList createToDo(int listId, ToDo newToDo);
 
   public List<ToDoList> deleteAllList(String username);
 

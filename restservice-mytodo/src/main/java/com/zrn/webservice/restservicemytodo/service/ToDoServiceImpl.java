@@ -98,4 +98,26 @@ public class ToDoServiceImpl implements ToDoService {
     }
     return todos.get(todoId);
   }
+
+  @Override
+  public ToDoList getListById(int listId) {
+    ToDoList todoList = findListById(listId);
+    if (todoList == null) return null;
+
+    return todoList;
+  }
+
+  @Override
+  public List<ToDoList> createList(ToDoList newList) { // TODO Auto-generated method stub
+
+    lists.add(newList);
+    return lists;
+  }
+
+  @Override
+  public ToDoList createToDo(int listId, ToDo newToDo) { // TODO Auto-generated method stub
+    boolean isAdded = lists.get(listId).getTodos().add(newToDo);
+    if (isAdded) return lists.get(listId); // return newToDo;
+    else return null;
+  }
 }
